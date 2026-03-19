@@ -124,11 +124,11 @@ export const testimonials = [
 ] as const;
 
 export const contactMeta = {
-  phone: '+91 98100 77881',
+  phone: '+91 79038 35951',
   email: 'sales@zingkingmasala.com',
-  whatsapp: '919810077881',
-  address: 'Sector 63, Noida, Uttar Pradesh 201301',
-  mapEmbed: 'https://www.google.com/maps?q=Noida+Sector+63&output=embed',
+  whatsapp: '917903835951',
+  address: 'Patna, Bihar 800001, India',
+  mapEmbed: 'https://www.google.com/maps?q=Patna+Bihar+800001&output=embed',
 };
 
 export const b2bBenefits = [

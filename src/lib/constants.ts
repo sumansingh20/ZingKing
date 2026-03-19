@@ -21,10 +21,10 @@ export const BRAND = {
 
 // Contact Information
 export const CONTACT = {
-  phone: '+91 98100 77881',
+  phone: '+91 79038 35951',
   email: 'sales@zingkingmasala.com',
-  whatsapp: '919810077881',
-  address: 'Sector 63, Noida, Uttar Pradesh 201301, India',
+  whatsapp: '917903835951',
+  address: 'Patna, Bihar 800001, India',
   workingHours: 'Mon - Sat: 9:00 AM - 6:00 PM',
 } as const;
 
