@@ -2,6 +2,8 @@ import { connectDB } from '@/lib/mongodb';
 import Contact from '@/models/Contact';
 import { sendEmail } from '@/lib/email';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     await connectDB();

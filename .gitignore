@@ -57,3 +57,5 @@ Thumbs.db
 build_debug.txt
 build_final.txt
 build_output.txt
+
+.vercel

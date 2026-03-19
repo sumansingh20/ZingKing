@@ -2,6 +2,8 @@ import { connectDB } from '@/lib/mongodb';
 import Order from '@/models/Order';
 import { sendEmail } from '@/lib/email';
 
+export const dynamic = 'force-dynamic';
+
 // Generate unique order number
 function generateOrderNumber() {
   const timestamp = Date.now().toString().slice(-6);
