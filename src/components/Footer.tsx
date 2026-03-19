@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { FaWhatsapp, FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FiMail, FiMapPin, FiPhone, FiSend, FiArrowUp } from 'react-icons/fi';
-import { contactMeta } from '@/data/brandContent';
+import { contactMeta } from '@/data/content';
 
 export default function Footer() {
   const year = new Date().getFullYear();

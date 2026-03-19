@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
-import { products } from '@/data/brandContent';
+import { products } from '@/data/content';
 import { addItemToCart } from '@/lib/cart';
+import SafeImage from '@/components/ui/SafeImage';
 
 type PriceFilter = 'all' | 'under-160' | '160-200' | 'above-200';
 
@@ -121,7 +121,7 @@ export default function ProductsPage() {
                 className="overflow-hidden rounded-2xl border border-[#4B2E2B]/10 bg-white shadow-soft"
               >
                 <div className="relative h-52">
-                  <Image src={product.image} alt={product.name} fill sizes="(max-width: 1280px) 50vw, 33vw" className="object-cover" />
+                  <SafeImage src={product.image} alt={product.name} fill sizes="(max-width: 1280px) 50vw, 33vw" className="object-cover" />
                   <span className="absolute right-3 top-3 rounded-full bg-[#F4A300] px-3 py-1 text-xs font-semibold text-[#4B2E2B]">
                     {product.weight}g
                   </span>

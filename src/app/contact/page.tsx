@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { contactMeta } from '@/data/brandContent';
+import { contactMeta } from '@/data/content';
 
 export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');

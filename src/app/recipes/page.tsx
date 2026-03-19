@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { recipeCards } from '@/data/brandContent';
+import { recipeCards } from '@/data/content';
+import SafeImage from '@/components/ui/SafeImage';
 
 export default function RecipesPage() {
   return (
@@ -18,7 +18,7 @@ export default function RecipesPage() {
           {recipeCards.map((recipe) => (
             <article key={recipe.title} className="overflow-hidden rounded-2xl border border-[#4B2E2B]/10 bg-white shadow-soft">
               <div className="relative h-56">
-                <Image src={recipe.image} alt={recipe.title} fill sizes="33vw" className="object-cover" />
+                <SafeImage src={recipe.image} alt={recipe.title} fill sizes="33vw" className="object-cover" />
               </div>
               <div className="p-5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-[#7B1E1E]">

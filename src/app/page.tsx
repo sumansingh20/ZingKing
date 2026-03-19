@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -31,8 +30,9 @@ import {
   qualitySteps,
   recipeCards,
   testimonials,
-} from '@/data/brandContent';
+} from '@/data/content';
 import { addItemToCart } from '@/lib/cart';
+import SafeImage from '@/components/ui/SafeImage';
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -49,7 +49,7 @@ export default function Home() {
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-screen overflow-hidden">
         <motion.div style={{ y: heroY, opacity: heroOpacity }} className="absolute inset-0">
-          <Image
+          <SafeImage
             src={heroImage}
             alt="Premium spice spread"
             fill
@@ -248,7 +248,7 @@ export default function Home() {
             >
               <Link href={`/products/${product.slug}`}>
                 <div className="relative h-56 overflow-hidden">
-                  <Image
+                  <SafeImage
                     src={product.image}
                     alt={product.name}
                     fill
@@ -414,7 +414,7 @@ export default function Home() {
                 className="group relative overflow-hidden rounded-3xl cursor-pointer"
               >
                 <div className="relative h-72">
-                  <Image src={card.image} alt={card.title} fill sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <SafeImage src={card.image} alt={card.title} fill sizes="25vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1e120f]/90 via-[#1e120f]/40 to-transparent" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -441,7 +441,7 @@ export default function Home() {
               className="relative"
             >
               <div className="relative h-[500px] rounded-3xl overflow-hidden">
-                <Image
+                <SafeImage
                   src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=80"
                   alt="Spice quality process"
                   fill
@@ -580,7 +580,7 @@ export default function Home() {
                 className="group overflow-hidden rounded-2xl bg-white border border-[#4B2E2B]/10 shadow-sm hover:shadow-xl transition-all"
               >
                 <div className="relative h-56 overflow-hidden">
-                  <Image
+                  <SafeImage
                     src={recipe.image}
                     alt={recipe.title}
                     fill
@@ -665,7 +665,7 @@ export default function Home() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="relative rounded-3xl overflow-hidden">
-            <Image
+            <SafeImage
               src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=2000&q=80"
               alt="B2B Partnership"
               fill
@@ -743,7 +743,7 @@ export default function Home() {
                 className="group overflow-hidden rounded-2xl bg-white border border-[#4B2E2B]/10"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <Image
+                  <SafeImage
                     src={post.image}
                     alt={post.title}
                     fill

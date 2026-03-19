@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiShoppingCart, FiX, FiPhone, FiSearch  } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { getCartCount } from '@/lib/cart';
-import { contactMeta } from '@/data/brandContent';
+import { contactMeta } from '@/data/content';
 
 const navItems = [
   { name: 'Home', href: '/' },

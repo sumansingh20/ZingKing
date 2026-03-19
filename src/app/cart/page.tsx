@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import {
@@ -9,6 +8,7 @@ import {
   removeCartItem,
   updateCartItemQuantity,
 } from '@/lib/cart';
+import SafeImage from '@/components/ui/SafeImage';
 
 export default function CartPage() {
   const [items, setItems] = useState<CartItem[]>([]);
@@ -52,7 +52,7 @@ export default function CartPage() {
               {items.map((item) => (
                 <article key={item.productId} className="grid grid-cols-[96px_1fr] gap-4 rounded-2xl border border-[#4B2E2B]/10 bg-white p-4 md:grid-cols-[120px_1fr]">
                   <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-28 md:w-28">
-                    <Image src={item.image} alt={item.name} fill sizes="120px" className="object-cover" />
+                    <SafeImage src={item.image} alt={item.name} fill sizes="120px" className="object-cover" />
                   </div>
                   <div>
                     <div className="flex flex-wrap items-start justify-between gap-3">

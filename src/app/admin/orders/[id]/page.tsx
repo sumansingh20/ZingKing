@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { FiArrowLeft, FiSave } from 'react-icons/fi';
 import axios from 'axios';
 import { IOrder } from '@/models/Order';
+import SafeImage from '@/components/ui/SafeImage';
 
 export default function OrderDetails() {
   const router = useRouter();
@@ -170,11 +171,15 @@ export default function OrderDetails() {
               >
                 <div className="flex items-center gap-4">
                   {item.image && (
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-12 h-12 rounded object-cover"
-                    />
+                    <div className="relative w-12 h-12 overflow-hidden rounded">
+                      <SafeImage
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="48px"
+                        className="object-cover"
+                      />
+                    </div>
                   )}
                   <div>
                     <p className="font-medium text-gray-900">{item.name}</p>

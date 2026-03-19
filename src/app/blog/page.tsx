@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { blogPosts } from '@/data/brandContent';
+import { blogPosts } from '@/data/content';
+import SafeImage from '@/components/ui/SafeImage';
 
 export const metadata = {
   title: 'Zingking Masala Blog',
@@ -24,7 +24,7 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <article key={post.slug} className="overflow-hidden rounded-2xl border border-[#4B2E2B]/10 bg-white">
               <div className="relative h-48">
-                <Image src={post.image} alt={post.title} fill sizes="33vw" className="object-cover" />
+                <SafeImage src={post.image} alt={post.title} fill sizes="33vw" className="object-cover" />
               </div>
               <div className="p-5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-[#7B1E1E]">

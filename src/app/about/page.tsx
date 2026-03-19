@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { brandStory, qualitySteps } from '@/data/brandContent';
+import { brandStory, qualitySteps } from '@/data/content';
 
 export default function AboutPage() {
   return (

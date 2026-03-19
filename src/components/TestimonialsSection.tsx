@@ -11,7 +11,7 @@ const testimonials = [
     role: 'Home Chef',
     text: 'The quality of Zingking Masala is unmatched! My family loves the authentic taste. I will never switch brands.',
     rating: 5,
-    image: 'https://api.placeholder.com/100x100',
+    image: '/images/avatar-fallback.svg',
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const testimonials = [
     role: 'Restaurant Owner',
     text: 'As a restaurant owner, I need consistent quality. Zingking delivers exactly that. Highly recommended!',
     rating: 5,
-    image: 'https://api.placeholder.com/100x100',
+    image: '/images/avatar-fallback.svg',
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const testimonials = [
     role: 'Distributor',
     text: 'Partnering with Zingking was the best decision. Great support and fantastic customer demand.',
     rating: 5,
-    image: 'https://api.placeholder.com/100x100',
+    image: '/images/avatar-fallback.svg',
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const testimonials = [
     role: 'Export Business',
     text: 'Export quality that truly matches international standards. Zingking is our trusted partner globally.',
     rating: 5,
-    image: 'https://api.placeholder.com/100x100',
+    image: '/images/avatar-fallback.svg',
   },
 ]
 

@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
@@ -18,8 +17,9 @@ import {
   FiStar,
   FiTruck,
 } from 'react-icons/fi';
-import { products } from '@/data/brandContent';
+import { products } from '@/data/content';
 import { addItemToCart } from '@/lib/cart';
+import SafeImage from '@/components/ui/SafeImage';
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -82,7 +82,7 @@ export default function ProductDetailPage() {
               animate={{ opacity: 1 }}
               className="relative aspect-square rounded-3xl overflow-hidden bg-white shadow-lg"
             >
-              <Image
+              <SafeImage
                 src={allImages[activeImage]}
                 alt={product.name}
                 fill
@@ -108,12 +108,16 @@ export default function ProductDetailPage() {
                   <button
                     onClick={() => setActiveImage((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))}
                     className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-[#4B2E2B] hover:bg-white transition-colors"
+                    aria-label="Previous product image"
+                    title="Previous image"
                   >
                     <FiChevronLeft className="w-5 h-5" />
                   </button>
                   <button
                     onClick={() => setActiveImage((prev) => (prev === allImages.length - 1 ? 0 : prev + 1))}
                     className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-[#4B2E2B] hover:bg-white transition-colors"
+                    aria-label="Next product image"
+                    title="Next image"
                   >
                     <FiChevronRight className="w-5 h-5" />
                   </button>
@@ -131,8 +135,10 @@ export default function ProductDetailPage() {
                     className={`relative w-20 h-20 rounded-xl overflow-hidden border-2 transition-all ${
                       activeImage === index ? 'border-[#7B1E1E] ring-2 ring-[#7B1E1E]/20' : 'border-transparent'
                     }`}
+                    aria-label={`Show image ${index + 1}`}
+                    title={`Image ${index + 1}`}
                   >
-                    <Image src={img} alt="" fill sizes="80px" className="object-cover" />
+                    <SafeImage src={img} alt={`${product.name} view ${index + 1}`} fill sizes="80px" className="object-cover" />
                   </button>
                 ))}
               </div>
@@ -182,6 +188,8 @@ export default function ProductDetailPage() {
                   <button
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                     className="w-12 h-12 flex items-center justify-center text-[#4B2E2B] hover:bg-[#4B2E2B]/5 rounded-l-full transition-colors"
+                    aria-label="Decrease quantity"
+                    title="Decrease quantity"
                   >
                     <FiMinus />
                   </button>
@@ -189,6 +197,8 @@ export default function ProductDetailPage() {
                   <button
                     onClick={() => setQuantity((q) => q + 1)}
                     className="w-12 h-12 flex items-center justify-center text-[#4B2E2B] hover:bg-[#4B2E2B]/5 rounded-r-full transition-colors"
+                    aria-label="Increase quantity"
+                    title="Increase quantity"
                   >
                     <FiPlus />
                   </button>
@@ -202,11 +212,19 @@ export default function ProductDetailPage() {
                   Add to Cart
                 </button>
 
-                <button className="w-12 h-12 flex items-center justify-center border border-[#4B2E2B]/20 rounded-full text-[#4B2E2B] hover:bg-[#4B2E2B]/5 transition-colors">
+                <button
+                  className="w-12 h-12 flex items-center justify-center border border-[#4B2E2B]/20 rounded-full text-[#4B2E2B] hover:bg-[#4B2E2B]/5 transition-colors"
+                  aria-label="Add to wishlist"
+                  title="Add to wishlist"
+                >
                   <FiHeart />
                 </button>
 
-                <button className="w-12 h-12 flex items-center justify-center border border-[#4B2E2B]/20 rounded-full text-[#4B2E2B] hover:bg-[#4B2E2B]/5 transition-colors">
+                <button
+                  className="w-12 h-12 flex items-center justify-center border border-[#4B2E2B]/20 rounded-full text-[#4B2E2B] hover:bg-[#4B2E2B]/5 transition-colors"
+                  aria-label="Share product"
+                  title="Share product"
+                >
                   <FiShare2 />
                 </button>
               </div>
@@ -353,7 +371,7 @@ export default function ProductDetailPage() {
                   className="group bg-white rounded-2xl overflow-hidden border border-[#4B2E2B]/10 hover:shadow-lg transition-shadow"
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <Image
+                    <SafeImage
                       src={relProduct.image}
                       alt={relProduct.name}
                       fill
